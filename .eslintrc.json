@@ -5,53 +5,16 @@
     "parser": "babel-eslint"
   },
   "globals": {
-    // browser JS specific
+    // browser specific
     "document": false,
-    "window": false
+    "window": false,
+    "localStorage": false
   },
   // https://www.npmjs.com/package/eslint-config-airbnb
   "extends": "airbnb",
-  // check if imports actually resolve
-  /*settings: {
-    "import/resolver": {
-      webpack: {
-        config: "build/webpack.base.conf.js"
-      },
-      node: {
-        extensions: [".js", ".vue", ".json"]
-      }
-    }
-  },*/
   // custom rules here
   "rules": {
     // allow jsx code inside .js files
     "react/jsx-filename-extension": "off"
-    // disallow reassignment of function parameters
-    // disallow parameter object manipulation except for specific exclusions
-    /*"no-param-reassign": ["error", {
-      props: true,
-      ignorePropertyModificationsFor: [
-        "state", // for vuex state
-        "acc", // for reduce accumulators
-        "e", // for e.return value
-        "request" // for axios
-      ]
-    }],*/
-    // allow debugger during development
-    /*"import/no-cycle": "off",
-    "import/prefer-default-export": "off",
-    "no-console": "off",
-    "import/no-named-as-default": "off",
-    "no-empty-pattern": "off",
-    "import/no-unresolved": "off",
-    "no-useless-escape": "off",
-    "vue/valid-v-model": "off",
-    "vue/no-v-html": "off",
-
-    "no-underscore-dangle": ["error", {
-      "allow": [
-        "_id" // for mongo _id
-      ]
-    }]*/
   }
 }
