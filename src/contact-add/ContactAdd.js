@@ -1,7 +1,10 @@
 import React from 'react';
 import * as uuid from 'uuid';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { ArrowBack } from '@material-ui/icons';
 import FormConstructor from '../form-constructor/FormConstructor';
+import Head from '../head/Head';
+import FabButton from '../fab-button/FabButton';
 
 const formFields = [
   {
@@ -38,9 +41,12 @@ export default () => {
 
   return (
     <div>
-      <h2>Add</h2>
-      <Link to="/">Back</Link>
-      <FormConstructor formFields={formFields} submitHandler={submitHandler} />
+      <Head title="Add contact">
+        <FormConstructor formFields={formFields} submitHandler={submitHandler} />
+      </Head>
+      <FabButton href="/">
+        <ArrowBack fontSize="large" />
+      </FabButton>
     </div>
   );
 };

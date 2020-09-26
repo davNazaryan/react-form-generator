@@ -8,10 +8,10 @@ Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Build production
-### `npm run build`
+#### `npm run build`
 
 To serve project in local use
-### `npm run serve`
+#### `npm run serve`
 
 ## Form generator usage
 

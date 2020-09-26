@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { IconButton, withStyles } from '@material-ui/core';
-import { Add } from '@material-ui/icons';
 
 export default withStyles({
   root: {
@@ -12,8 +11,8 @@ export default withStyles({
     color: 'white',
     boxShadow: '0 3px 5px 2px rgba(33, 203, 243, .3)',
   },
-})(({ classes, href }) => (
+})(({ children, classes, href }) => (
   <IconButton className={classes.root} component={Link} to={href}>
-    <Add fontSize="large" />
+    {children}
   </IconButton>
 ));

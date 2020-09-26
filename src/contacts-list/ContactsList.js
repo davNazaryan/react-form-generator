@@ -1,5 +1,14 @@
 import React from 'react';
-import AddButton from './AddButton';
+import {
+  List,
+  ListItem,
+  ListItemText,
+} from '@material-ui/core';
+import { Add } from '@material-ui/icons';
+
+import Head from '../head/Head';
+import FabButton from '../fab-button/FabButton';
+import './ContactsList.css';
 
 class ContactsList extends React.Component {
   constructor(props) {
@@ -16,15 +25,21 @@ class ContactsList extends React.Component {
     console.log('++++++++++++++++++++');
     return (
       <div>
-        <h2>List</h2>
-        {contacts.map((contact) => (
-          <div key={contact.id}>
-            <p key="contact-name">{contact.name}</p>
-            <p key="contact-number">{contact.number}</p>
-            <p key="contact-callDate">{contact.callDate}</p>
-          </div>
-        ))}
-        <AddButton href="/add-contact" />
+        <Head title="Contacts">
+          {contacts.map((contact) => (
+            <div key={contact.id} className="contact-item">
+              <List>
+                <ListItem>
+                  <ListItemText primary={contact.name} secondary={contact.callDate || 'not set'} />
+                  {contact.number}
+                </ListItem>
+              </List>
+            </div>
+          ))}
+        </Head>
+        <FabButton href="/add-contact">
+          <Add fontSize="large" />
+        </FabButton>
       </div>
     );
   }
